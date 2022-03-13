@@ -337,7 +337,7 @@ optimizer = torch.optim.Adam(model.parameters(), 5e-4)
 # In[ ]:
 
 
-max_epochs = 2
+max_epochs = 50
 val_interval = 2
 best_metric = -1
 best_metric_epoch = -1
@@ -396,7 +396,8 @@ for epoch in range(max_epochs):
                 best_metric = metric
                 best_metric_epoch = epoch + 1
                 torch.save(model.state_dict(), os.path.join(
-                    root_dir, "best_metric_model.pth"))
+                    root_dir, "best_metric_model_v2.pth"))
+                best_model = model
                 print("saved new best metric model")
                 #print("val_input", val_inputs)
                 #input_tensor = val_inputs
@@ -416,8 +417,8 @@ print(
 #input_batch = input_tensor.unsqueeze(0)
 input_batch = torch.rand(1,1,96, 96, 96)
 input_batch = input_batch.cuda()
-traced_script_module = torch.jit.trace(model, input_batch)
-traced_script_module.save(os.path.join(root_dir,"best_metric_model.ts"))
+traced_script_module = torch.jit.trace(best_model, input_batch)
+traced_script_module.save(os.path.join(root_dir,"best_metric_model_v2.ts"))
 
 # ## Plot the loss and metric
 
