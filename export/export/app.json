@@ -1,0 +1,17 @@
+{
+    "api-version": "0.1.0",
+    "command": "python3 -u /opt/monai/app/app.py",
+    "environment": {},
+    "input": {
+        "formats": [],
+        "path": "input"
+    },
+    "output": {
+        "format": {},
+        "path": "output"
+    },
+    "sdk-version": "0.2.1+15.g8ec336f",
+    "timeout": 0,
+    "version": "0.0.0",
+    "working-directory": "/var/monai/"
+}

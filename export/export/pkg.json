@@ -1,0 +1,17 @@
+{
+    "api-version": "0.1.0",
+    "application-root": "/var/monai/",
+    "models": [
+        {
+            "name": "best_metric_model-1b56b435cb32d6f3d0bc519629fb82f78ce98a96404b6d5093c981bf57c768a9",
+            "path": "/opt/monai/models/best_metric_model/best_metric_model.pth"
+        }
+    ],
+    "resources": {
+        "cpu": 1,
+        "gpu": 1,
+        "memory": "7168Mi"
+    },
+    "sdk-version": "0.2.1+15.g8ec336f",
+    "version": "0.0.0"
+}
